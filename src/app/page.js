@@ -116,7 +116,7 @@ export default function Home() {
     <React.Fragment>
       <nav>
         <img
-          src="d424test/logo.png"
+          src="/d424test/logo.png"
           alt="logo"
           width={200}
           height={200}
