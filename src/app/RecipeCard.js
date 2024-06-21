@@ -192,7 +192,7 @@ const RecipeCard = ({
               Ingredients:
             </label>
             <input
-              className={`w-96 appearance-none border-2 border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight ${
+              className={`w-96 appearance-none border-gray-200 rounded py-2 px-4 text-gray-700 leading-tight ${
                 edit
                   ? "focus:outline-none focus:bg-white focus:border-purple-500"
                   : "bg-gray-200"
@@ -202,7 +202,7 @@ const RecipeCard = ({
               type="text"
               readOnly={!edit}
               onChange={handleChange}
-              value={edit ? formData.ingredients : recipe?.ingredients}
+              value={edit ? formData.ingredients : recipe?.ingredients.join(", ")}
             />
           </div>
           <div className="md:flex md:items-center md:justify-between p-2">

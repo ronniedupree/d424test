@@ -1,9 +1,7 @@
 import React from 'react';
-import RecipeReport from './RecipeReport';
-import "@testing-library/jest-dom";
 import { render, screen } from '@testing-library/react';
-import {expect, describe, test} from '@jest/globals';
-
+import "@testing-library/jest-dom";
+import RecipeReport from './RecipeReport';
 
 describe('RecipeReport component', () => {
   test('renders recipe details correctly', () => {
@@ -15,7 +13,7 @@ describe('RecipeReport component', () => {
       image_url: 'https://example.com/mock-image.jpg',
       meal_type: 'Mock Meal Type',
       ingredients: ['Ingredient 1', 'Ingredient 2'],
-      created_at: { seconds: 1234567890 }, 
+      created_at: { seconds: 1325476980 },
     };
 
     // Render the component with mock recipe data
@@ -27,6 +25,7 @@ describe('RecipeReport component', () => {
     expect(screen.getByText('Category:')).toBeInTheDocument();
     expect(screen.getByText('Mock Category')).toBeInTheDocument();
     expect(screen.getByText('Date Created:')).toBeInTheDocument();
+    expect(screen.getByText('01/01/2012, 08:03:00 PM')).toBeInTheDocument();
     expect(screen.getByText('Ingredients:')).toBeInTheDocument();
     expect(screen.getByText('Ingredient 1')).toBeInTheDocument();
     expect(screen.getByText('Ingredient 2')).toBeInTheDocument();
