@@ -2,15 +2,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import db from "./firebaseConfig";
-import {
-  addDoc,
-  getDocs,
-  doc,
-  updateDoc,
-  collection,
-  deleteDoc,
-  serverTimestamp,
-} from "firebase/firestore";
+import {addDoc, getDocs, doc, updateDoc, collection, deleteDoc, serverTimestamp } from "firebase/firestore";
 
 // Components
 import RecipeList from "./RecipeList";

@@ -158,7 +158,7 @@ const RecipeCard = ({
               id="title"
               name="title"
               type="text"
-              readOnly={edit ? false : true}
+              readOnly={!edit}
               onChange={handleChange}
               value={edit ? formData.title : recipe?.title}
             />
@@ -179,7 +179,7 @@ const RecipeCard = ({
               id="category"
               name="category"
               type="text"
-              readOnly={edit ? false : true}
+              readOnly={!edit}
               onChange={handleChange}
               value={edit ? formData.category : recipe?.category}
             />
@@ -200,7 +200,7 @@ const RecipeCard = ({
               id="ingredients"
               name="ingredients"
               type="text"
-              readOnly={edit ? false : true}
+              readOnly={!edit}
               onChange={handleChange}
               value={edit ? formData.ingredients : recipe?.ingredients}
             />
@@ -221,7 +221,7 @@ const RecipeCard = ({
               id="meal_type"
               name="meal_type"
               type="text"
-              readOnly={edit ? false : true}
+              readOnly={!edit}
               onChange={handleChange}
               value={edit ? formData.meal_type : recipe?.meal_type}
             />
@@ -248,7 +248,7 @@ const RecipeCard = ({
                 id="image_url"
                 name="image_url"
                 type="text"
-                readOnly={edit ? false : true}
+                readOnly={!edit}
                 onChange={handleChange}
                 value={edit ? formData.image_url : recipe?.image_url}
               />
@@ -270,7 +270,7 @@ const RecipeCard = ({
               id="updated_at"
               name="updated_at"
               type="text"
-              readOnly={edit ? false : true}
+              readOnly={!edit}
               value={secondsToDate(recipe?.updated_at?.seconds)}
             />
           </div>
