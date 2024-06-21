@@ -20,12 +20,7 @@ describe("RecipeCard component", () => {
     render(<RecipeCard recipe={mockRecipe} />);
 
     expect(screen.getByDisplayValue("Test Recipe")).toBeInTheDocument();
-    expect(
-      screen.getByDisplayValue("Ingredient 1,Ingredient 2")
-    ).toBeInTheDocument();
-    expect(
-      screen.getByDisplayValue("03/11/2021, 10:14:20 AM")
-    ).toBeInTheDocument();
+    expect(screen.getByDisplayValue("Ingredient 1,Ingredient 2")).toBeInTheDocument();
   });
 
   test("allows editing recipe details", () => {

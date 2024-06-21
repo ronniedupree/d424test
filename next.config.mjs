@@ -2,7 +2,7 @@
 
 const nextConfig = {
     output: "export",
-    basePath: "/d424test",
+    // basePath: "/d424test",
     images: {
         unoptimized: true
     }

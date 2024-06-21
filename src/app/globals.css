@@ -84,7 +84,8 @@ input {
   padding-top: 150px;
   gap: 100px;
   text-align: center;
-  background-image: url("/d424test/hero.png");
+  /* background-image: url("/d424test/hero.png"); */
+  background-image: url("/hero.png");
   background-size: 500px;
   background-repeat: no-repeat;
   background-position: 115% 25%;
@@ -94,7 +95,7 @@ input {
 .hero h1 {
   font-size: 5rem;
   font-weight: bold;
-  text-wrap: wrap;
+  text-wrap: none;
   max-width: 800px;
   line-height: 1;
 }
@@ -164,10 +165,9 @@ input {
   width: 50%;
   border: 2px solid #cecece;
   border-radius: 10px;
-  margin: 0 auto;
   padding: 30px 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  margin-bottom: 50px;
+  margin: 0 auto 50px;
 }
 
 .recipe-card button:not(:first-child) {

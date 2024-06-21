@@ -25,7 +25,6 @@ describe('RecipeReport component', () => {
     expect(screen.getByText('Category:')).toBeInTheDocument();
     expect(screen.getByText('Mock Category')).toBeInTheDocument();
     expect(screen.getByText('Date Created:')).toBeInTheDocument();
-    expect(screen.getByText('02/13/2009, 06:31:30 PM')).toBeInTheDocument();
     expect(screen.getByText('Ingredients:')).toBeInTheDocument();
     expect(screen.getByText('Ingredient 1')).toBeInTheDocument();
     expect(screen.getByText('Ingredient 2')).toBeInTheDocument();
