@@ -202,7 +202,7 @@ const RecipeCard = ({
               type="text"
               readOnly={!edit}
               onChange={handleChange}
-              value={edit ? formData.ingredients : recipe?.ingredients.join(", ")}
+              value={edit ? formData.ingredients : recipe?.ingredients}
             />
           </div>
           <div className="md:flex md:items-center md:justify-between p-2">
@@ -291,7 +291,7 @@ const RecipeCard = ({
       </div>
       {activeRecipe && (
         <div>
-          {!edit && <button onClick={() => setEdit(!edit)}>Edit</button>}
+          {!edit && <button onClick={() => setEdit(!edit)}>Edit Recipe</button>}
           {!edit && <button className="danger" onClick={handleDelete}>Delete Recipe</button>}
         </div>
       )}

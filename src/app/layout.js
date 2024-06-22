@@ -4,8 +4,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "D424 | David Canonigo",
-  description: "Capstone Project",
+  title: "Ronnie DuPree Jr.",
+  description: "D424",
 };
 
 export default function RootLayout({ children }) {

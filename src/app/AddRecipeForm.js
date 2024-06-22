@@ -78,7 +78,7 @@ const AddRecipeForm = ({ addDoc, colRef, serverTimestamp }) => {
       <div className={`banner-message ${messageType}`}>
         <p>{message}</p>
       </div>
-      <h1 className="add-recipe-title">Add Recipe:</h1>
+      <h1 className="add-recipe-title">Add Recipe</h1>
       <form
         onSubmit={handleSubmit}
         className="add-recipe-form flex flex-col items-start justify-center gap-4 p-4"

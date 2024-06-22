@@ -105,65 +105,74 @@ export default function Home() {
   };
 
   return (
-    <React.Fragment>
-      <nav>
-        <img
-          // src="/d424test/logo.png"
-          src="/logo.png"
-          alt="logo"
-          width={200}
-          height={200}
-          onClick={handleGoHome}
-        />
-        <ul>
-          <li onClick={openRecipeReports}>Recipes Report</li>
-        </ul>
-        <button onClick={openAddForm}>Add a recipe</button>
-      </nav>
-      {!isRecipesOpen && !showActiveRecipe && !showAddRecipeForm && (
-        <div className="hero">
-          <div className="hero-copy">
-            <h1>Your Culinary Adventure Awaits</h1>
-            <p>
-              Search for a recipe. For example: Carbonara. After searching,
-              clicking on one <br /> of the dropdown items. You will then be
-              able to edit and delete a recipe
-            </p>
-          </div>
-          <RecipeSearch
-            onSearch={handleSearch}
-            recipes={recipesSearch}
-            setActiveRecipe={handleActiveRecipe}
-          />
+      <React.Fragment>
+        <div className={"logo"}>
+          {/*<img*/}
+          {/*    // src="/d424test/logo.png"*/}
+          {/*    src="/logo.png"*/}
+          {/*    alt="logo"*/}
+          {/*    width={200}*/}
+          {/*    height={200}*/}
+          {/*    onClick={handleGoHome}*/}
+          {/*/>*/}
         </div>
-      )}
-      {!isRecipesOpen && showActiveRecipe && (
-        <div className={`recipe-card ${showActiveRecipe ? "active" : ""}`}>
-          <RecipeCard
-            colRef={colRef}
-            doc={doc}
-            updateDoc={updateDoc}
-            recipe={activeRecipe}
-            activeRecipe={showActiveRecipe}
-            handleGoHome={handleGoHome}
-            serverTimestamp={serverTimestamp}
-            deleteDoc={deleteDoc}
-          />
-        </div>
-      )}
-      {isRecipesOpen && !showAddRecipeForm && (
-        <React.Fragment>
-          <h1 className="recipe-title">Recipes Report: </h1>
-          <RecipeList recipes={recipes} />
-        </React.Fragment>
-      )}
-      {showAddRecipeForm && !isRecipesOpen && !showActiveRecipe && (
-        <AddRecipeForm
-          addDoc={addDoc}
-          colRef={colRef}
-          serverTimestamp={serverTimestamp}
-        />
-      )}
-    </React.Fragment>
+        <nav>
+          <ul>
+            <li onClick={handleGoHome}>Home</li>
+          </ul>
+          <ul>
+            <li onClick={openRecipeReports}>Recipes Report</li>
+          </ul>
+          <button onClick={openAddForm}>Add Recipe</button>
+        </nav>
+        {!isRecipesOpen && !showActiveRecipe && !showAddRecipeForm && (
+            <div className="hero">
+              <div className="hero-copy">
+                <h1>Save your favorite recipes!</h1>
+                <p>
+                  Search for a recipe. For example: Chocolate Chip Cookies. After searching,
+                  clicking on one <br/> of the dropdown items. You will then be
+                  able to edit and delete a recipe.
+                  <br/>
+                  <br/>
+                  You can view a list of all saved recipes in the Recipe Report.
+                </p>
+              </div>
+              <RecipeSearch
+                  onSearch={handleSearch}
+                  recipes={recipesSearch}
+                  setActiveRecipe={handleActiveRecipe}
+              />
+            </div>
+        )}
+        {!isRecipesOpen && showActiveRecipe && (
+            <div className={`recipe-card ${showActiveRecipe ? "active" : ""}`}>
+              <RecipeCard
+                  colRef={colRef}
+                  doc={doc}
+                  updateDoc={updateDoc}
+                  recipe={activeRecipe}
+                  activeRecipe={showActiveRecipe}
+                  handleGoHome={handleGoHome}
+                  serverTimestamp={serverTimestamp}
+                  deleteDoc={deleteDoc}
+              />
+            </div>
+        )}
+        {isRecipesOpen && !showAddRecipeForm && (
+            <React.Fragment>
+              <h1 className="recipe-title">Recipes Report</h1>
+              <RecipeList recipes={recipes}/>
+            </React.Fragment>
+        )}
+        {showAddRecipeForm && !isRecipesOpen && !showActiveRecipe && (
+            <AddRecipeForm
+                addDoc={addDoc}
+                colRef={colRef}
+                serverTimestamp={serverTimestamp}
+            />
+        )}
+
+      </React.Fragment>
   );
 }
