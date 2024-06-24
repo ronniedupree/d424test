@@ -91,7 +91,7 @@ export default function Home() {
     setShowAddRecipeForm(false);
   };
 
-  const openRecipeReports = () => {
+  const openRecipeList = () => {
     setRecipesSearch([]);
     setActiveRecipe([]);
     setIsRecipesOpen(true);
@@ -106,22 +106,12 @@ export default function Home() {
 
   return (
       <React.Fragment>
-        <div className={"logo"}>
-          {/*<img*/}
-          {/*    // src="/d424test/logo.png"*/}
-          {/*    src="/logo.png"*/}
-          {/*    alt="logo"*/}
-          {/*    width={200}*/}
-          {/*    height={200}*/}
-          {/*    onClick={handleGoHome}*/}
-          {/*/>*/}
-        </div>
         <nav>
           <ul>
             <li onClick={handleGoHome}>Home</li>
           </ul>
           <ul>
-            <li onClick={openRecipeReports}>Recipes Report</li>
+            <li onClick={openRecipeList}>Recipes List</li>
           </ul>
           <button onClick={openAddForm}>Add Recipe</button>
         </nav>
@@ -135,7 +125,7 @@ export default function Home() {
                   able to edit and delete a recipe.
                   <br/>
                   <br/>
-                  You can view a list of all saved recipes in the Recipe Report.
+                  You can view a list of all saved recipes in the Recipe List.
                 </p>
               </div>
               <RecipeSearch
@@ -161,7 +151,7 @@ export default function Home() {
         )}
         {isRecipesOpen && !showAddRecipeForm && (
             <React.Fragment>
-              <h1 className="recipe-title">Recipes Report</h1>
+              <h1 className="recipe-title">Recipes List</h1>
               <RecipeList recipes={recipes}/>
             </React.Fragment>
         )}

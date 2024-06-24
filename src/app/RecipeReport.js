@@ -27,7 +27,7 @@ const RecipeReport = ({ recipe }) => {
   return (
     <React.Fragment>
       <div className="recipes">
-        <img src={recipe.image_url} alt="text" width={100} height={100} />
+
         <div>
           <p>
             Title: <span>{recipe.title}</span>
@@ -36,23 +36,25 @@ const RecipeReport = ({ recipe }) => {
             Category: <span>{recipe.category}</span>
           </p>
           <p>
-            Date Created:{" "}
-            <span>{secondsToDate(recipe?.created_at?.seconds)}</span>
+            Meal Type: <span>{recipe.meal_type}</span>
           </p>
           <div>
             Ingredients:
             <ul>
               {recipe?.ingredients?.map((ingredient, index) => (
-                <li key={index}>
-                  • <span>{ingredient}</span>
-                </li>
+                  <li key={index}>
+                    <span>{ingredient}</span>
+                  </li>
               ))}
             </ul>
           </div>
-          <p>
-            Meal Type: <span>{recipe.meal_type}</span>
+          <br/>
+          <p style={{color: "maroon"}}>
+            Date Created:{" "}
+            <span>{secondsToDate(recipe?.created_at?.seconds)}</span>
           </p>
         </div>
+        <img src={recipe.image_url} alt="text" width={100} height={100}/>
       </div>
     </React.Fragment>
   );

@@ -282,7 +282,7 @@ const RecipeCard = ({
               >
                 {edit ? "Cancel" : "Edit Recipe"}
               </button>
-              <button className="save" type="submit">
+              <button className="save confirm" type="submit">
                 Save
               </button>
             </React.Fragment>
@@ -291,7 +291,7 @@ const RecipeCard = ({
       </div>
       {activeRecipe && (
         <div>
-          {!edit && <button onClick={() => setEdit(!edit)}>Edit Recipe</button>}
+          {!edit && <button className="warning" onClick={() => setEdit(!edit)}>Edit Recipe</button>}
           {!edit && <button className="danger" onClick={handleDelete}>Delete Recipe</button>}
         </div>
       )}

@@ -4,6 +4,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
 
 import RecipeCard from "./RecipeCard";
+import { describe, test } from "@jest/globals";
+import expect from "expect";
 
 describe("RecipeCard component", () => {
   const mockRecipe = {
@@ -30,18 +32,10 @@ describe("RecipeCard component", () => {
 
   test("allows editing recipe details", () => {
     render(<RecipeCard recipe={mockRecipe} />);
-
-    fireEvent.click(screen.getByRole("button", { name: "Edit" }));
-
-    fireEvent.change(screen.getByLabelText("Title:"), {
-      target: { value: "New Title" },
-    });
-    fireEvent.change(screen.getByLabelText("Category:"), {
-      target: { value: "New Category" },
-    });
-
+    fireEvent.click(screen.getByRole("button", { name: "Edit Recipe" }));
+    fireEvent.change(screen.getByLabelText("Title:"), { target: { value: "New Title" },});
+    fireEvent.change(screen.getByLabelText("Category:"), { target: { value: "New Category" },});
     fireEvent.click(screen.getByText("Save"));
-
     expect(screen.getByDisplayValue("New Title")).toBeInTheDocument();
     expect(screen.getByDisplayValue("New Category")).toBeInTheDocument();
   });
