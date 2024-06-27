@@ -31,12 +31,14 @@ body {
 }
 
 nav {
+  background: linear-gradient(to right, #DDD6F3 0%, #ffffff 30%, #ffffff 70%, #ddd6f3 100%);
   align-content: center;
   max-width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  opacity: 100;
 }
 
 nav ul {
@@ -46,11 +48,22 @@ nav ul {
 nav ul li {
   margin-right: 100px;
   font-weight: 500;
+
 }
 
 nav ul li:hover {
   color: #683ac4;
   cursor: pointer;
+}
+
+div p {
+  padding-bottom: 10px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }
 
 .logo {
@@ -164,6 +177,7 @@ input {
   justify-content: space-between;
   width: 700px;
   border: 2px solid #dddddd;
+  background: white;
   border-radius: 50px;
   margin: 0 auto;
   padding: 5px;
@@ -202,20 +216,20 @@ input {
   margin-right: 20px;
 }
 
-/* RECIPE CARD REPORT */
+/* RECIPE CARD LIST */
 .recipe-title {
   font-size: 30px;
-  padding: 70px 40px 50px;
+  padding: 70px 40px 20px;
   text-align: center;
 }
 .recipe-card {
   width: 50%;
-  border: 2px solid #cecece;
   border-radius: 10px;
   padding: 30px 20px;
-  box-shadow: rgba(229, 7, 210, 0.35) 0 5px 15px;
   margin: 0 auto 50px;
-  background: #FFF;
+  /*box-shadow: rgba(229, 7, 210, 0.35) 0 5px 15px;*/
+  /*border: 2px solid #cecece;*/
+  /*background: #FFF;*/
 }
 
 .recipe-card button:not(:first-child) {
@@ -230,7 +244,7 @@ input {
 }
 
 .recipes:not(:first-child) {
-  border-top: 1px solid #d3d3d3;
+  border-top: 1px solid #c5c5c5;
 }
 
 .recipes img {
@@ -269,8 +283,10 @@ input {
   border: 2px solid #cecece;
   border-radius: 10px;
   width: 90%;
+  background: white;
 }
 .recipes-search p {
+
   width: 100%;
   text-align: left;
   padding: 10px;
@@ -284,6 +300,8 @@ input {
 }
 .recipes-search p:hover {
   background-color: rgba(144, 94, 185, 0.7);
+  border: 1px solid #cecece;
+  border-radius: 10px;
   color: #fff;
 }
 
@@ -325,10 +343,10 @@ input {
 }
 
 .banner-message.success {
-  background-color: #32c732;
+  color: #0cb004;
 }
 .banner-message.danger {
-  background-color: #ff0000;
+  color: red;
 }
 
 .form-container {

@@ -5,14 +5,14 @@ import db from "./firebaseConfig";
 import {addDoc, getDocs, doc, updateDoc, collection, deleteDoc, serverTimestamp } from "firebase/firestore";
 
 // Components
-import RecipeList from "./RecipeList";
-import RecipeSearch from "./RecipeSearch";
-import AddRecipeForm from "./AddRecipeForm";
-import RecipeCard from "./RecipeCard";
+import RecipeList from "./recipe-list";
+import RecipeSearch from "./recipe-search";
+import AddRecipeForm from "./add-recipe-form";
+import RecipeCard from "./recipe-card";
 
 const colRef = collection(db.db, "recipes");
 
-async function fetchRecipesFromFirestore() {
+async function fetchDataFromFirestore() {
   try {
     const querySnapshot = await getDocs(colRef);
     const data = [];
@@ -37,7 +37,17 @@ export default function Home() {
   const [showAddRecipeForm, setShowAddRecipeForm] = useState(false);
 
   const fetchRecipes = async () => {
-    const data = await fetchRecipesFromFirestore();
+
+    // Optional alphabetical order
+    // const raw = await fetchDataFromFirestore();
+    // const data = raw.slice(0);
+    // data.sort(function(a,b) {
+    //   let x = a.title;
+    //   let y = b.title;
+    //   return x < y ? -1 : x > y ? 1 : 0;
+    // });
+
+    const data = await fetchDataFromFirestore();
     setRecipes(data);
   };
 
@@ -106,7 +116,7 @@ export default function Home() {
 
   return (
       <React.Fragment>
-        <nav>
+        <nav className="sticky">
           <ul>
             <li onClick={handleGoHome}>Home</li>
           </ul>

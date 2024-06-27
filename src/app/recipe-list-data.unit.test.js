@@ -1,9 +1,9 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import "@testing-library/jest-dom";
-import RecipeReport from './RecipeReport';
+import RecipeListData from './recipe-list-data';
 
-describe('RecipeReport component', () => {
+describe('RecipeListData component', () => {
   test('renders recipe details correctly', () => {
     // Mock recipe data
     const mockRecipe = {
@@ -17,10 +17,9 @@ describe('RecipeReport component', () => {
     };
 
     // Render the component with mock recipe data
-    render(<RecipeReport recipe={mockRecipe} />);
+    render(<RecipeListData recipe={mockRecipe} />);
 
     // Assert rendered text content
-    expect(screen.getByText('Title:')).toBeInTheDocument();
     expect(screen.getByText('Mock Recipe')).toBeInTheDocument();
     expect(screen.getByText('Category:')).toBeInTheDocument();
     expect(screen.getByText('Mock Category')).toBeInTheDocument();

@@ -1,7 +1,7 @@
-// RecipeReport.js
+// recipe-list-data.js
 import React from "react";
 
-const RecipeReport = ({ recipe }) => {
+const RecipeListData = ({ recipe }) => {
   const secondsToDate = (seconds) => {
     // Convert seconds to milliseconds by multiplying by 1000
     const milliseconds = seconds * 1000;
@@ -27,10 +27,9 @@ const RecipeReport = ({ recipe }) => {
   return (
     <React.Fragment>
       <div className="recipes">
-
         <div>
           <p>
-            Title: <span>{recipe.title}</span>
+            <span>{recipe.title}</span>
           </p>
           <p>
             Category: <span>{recipe.category}</span>
@@ -60,4 +59,4 @@ const RecipeReport = ({ recipe }) => {
   );
 };
 
-export default RecipeReport;
+export default RecipeListData;

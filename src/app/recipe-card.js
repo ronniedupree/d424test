@@ -1,4 +1,4 @@
-// RecipeCard.js
+// recipe-card.js
 "use client";
 import React, { useState } from "react";
 
@@ -275,24 +275,24 @@ const RecipeCard = ({
             />
           </div>
           {edit && (
-            <React.Fragment>
-              <button
-                className={edit ? "danger" : ""}
-                onClick={() => setEdit(!edit)}
-              >
-                {edit ? "Cancel" : "Edit Recipe"}
-              </button>
-              <button className="save confirm" type="submit">
-                Save
-              </button>
-            </React.Fragment>
+              <React.Fragment>
+                <button className="confirm" type="submit">
+                  Save Recipe
+                </button>
+                <button
+                    className={edit ? "danger" : ""}
+                    onClick={() => setEdit(!edit)}
+                >
+                  {edit ? "Cancel" : "Edit Recipe"}
+                </button>
+              </React.Fragment>
           )}
         </form>
       </div>
       {activeRecipe && (
-        <div>
-          {!edit && <button className="warning" onClick={() => setEdit(!edit)}>Edit Recipe</button>}
-          {!edit && <button className="danger" onClick={handleDelete}>Delete Recipe</button>}
+          <div>
+            {!edit && <button className="warning" onClick={() => setEdit(!edit)}>Edit Recipe</button>}
+            {!edit && <button className="danger" onClick={handleDelete}>Delete Recipe</button>}
         </div>
       )}
     </React.Fragment>

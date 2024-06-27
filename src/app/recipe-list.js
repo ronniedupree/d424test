@@ -1,12 +1,13 @@
-// RecipeList.js
+// recipe-list.js
 import React from 'react';
-import RecipeReport from './RecipeReport';
+import RecipeListData from './recipe-list-data';
 
 const RecipeList = ({ recipes }) => {
   return (
     <div className='recipe-card'>
-      {recipes.map(recipe => (
-        <RecipeReport key={recipe.id} recipe={recipe} />
+      {recipes
+          .map(recipe => (
+        <RecipeListData key={recipe.id} recipe={recipe} />
       ))}
     </div>
   );

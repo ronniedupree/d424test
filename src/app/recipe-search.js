@@ -1,4 +1,4 @@
-// RecipeSearch.js
+// recipe-search.js
 import React, { useState } from "react";
 
 const RecipeSearch = ({ onSearch, recipes, setActiveRecipe }) => {
@@ -27,7 +27,7 @@ const RecipeSearch = ({ onSearch, recipes, setActiveRecipe }) => {
           type="text"
           value={searchTerm}
           onChange={handleChange}
-          placeholder="Search for recipe. i.e.: Carbonara"
+          placeholder="ex. Chocolate Chip Cookies"
         />
         <button type="submit">Search</button>
         {recipes.length > 0 && (
