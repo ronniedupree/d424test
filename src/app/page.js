@@ -38,15 +38,6 @@ export default function Home() {
 
   const fetchRecipes = async () => {
 
-    // Optional alphabetical order
-    // const raw = await fetchDataFromFirestore();
-    // const data = raw.slice(0);
-    // data.sort(function(a,b) {
-    //   let x = a.title;
-    //   let y = b.title;
-    //   return x < y ? -1 : x > y ? 1 : 0;
-    // });
-
     const data = await fetchDataFromFirestore();
     setRecipes(data);
   };
