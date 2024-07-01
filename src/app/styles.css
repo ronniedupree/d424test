@@ -1,16 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+PL:wght@100..400&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');@import url("https://fonts.googleapis.com/css2?family=Playwrite+PL:wght@100..400&display=swap");
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playwrite+PL:wght@100..400&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* CSS Variables */
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-  background: #FAACA8;
-  background: linear-gradient(to right, #DDD6F3 0%, #ffffff 30%, #ffffff 70%, #ddd6f3 100%)
+  background: linear-gradient(to right, #DDD6F3 0%, #ffffff 30%, #ffffff 70%, #ddd6f3 100%);
 }
 
+/* Dark mode color scheme */
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -19,17 +22,20 @@
   }
 }
 
+/* Global styles */
 * {
   font-family: "Red Hat Display", sans-serif;
   font-optical-sizing: auto;
 }
 
+/* Reset margins and paddings */
 body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* Navigation styles */
 nav {
   background: linear-gradient(to right, #DDD6F3 0%, #ffffff 30%, #ffffff 70%, #ddd6f3 100%);
   align-content: center;
@@ -41,6 +47,7 @@ nav {
   opacity: 100;
 }
 
+/* Navigation list styles */
 nav ul {
   display: inline-block;
 }
@@ -48,7 +55,6 @@ nav ul {
 nav ul li {
   margin-right: 100px;
   font-weight: 500;
-
 }
 
 nav ul li:hover {
@@ -56,16 +62,19 @@ nav ul li:hover {
   cursor: pointer;
 }
 
+/* Paragraph inside div styles */
 div p {
   padding-bottom: 10px;
 }
 
+/* Sticky positioning */
 .sticky {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
 }
 
+/* Logo styles */
 .logo {
   display: flex;
   align-items: center;
@@ -77,6 +86,7 @@ div p {
   padding-bottom: 20px;
 }
 
+/* Button styles */
 button {
   background-color: #FFF;
   background-image: linear-gradient(225deg, rgba(255, 60, 172, .7) 0%, rgba(120, 75, 160, .7) 50%, rgba(43, 134, 197, .7) 100%);
@@ -93,15 +103,16 @@ button:hover {
   cursor: pointer;
 }
 
+/* Button variants */
 button.danger {
   background-color: #c71c00;
   background-image: linear-gradient(225deg, #c71c00 0%, #871f00 50%, #aa0004 100%);
   border: 1px solid #871f00 !important;
   color: #fff;
 }
+
 button.danger:hover {
   background-image: linear-gradient(225deg, rgba(199, 28, 0, .5) 0%, rgba(135, 31, 0, .5) 50%, rgba(199, 28, 0, .5) 100%);
-  cursor: pointer;
 }
 
 button.warning {
@@ -110,9 +121,9 @@ button.warning {
   border: 1px solid #ff8000 !important;
   color: #fff;
 }
+
 button.warning:hover {
   background-image: linear-gradient(225deg, rgb(250, 173, 132, .55) 0%, rgba(255, 128, 0, .55) 50%, rgb(250, 173, 132, .55) 100%);
-  cursor: pointer;
 }
 
 button.confirm {
@@ -121,11 +132,12 @@ button.confirm {
   border: 1px solid #088a00 !important;
   color: #fff;
 }
+
 button.confirm:hover {
   background-image: linear-gradient(225deg, rgba(101, 218, 69, .55) 0%, rgba(12, 176, 4, .55) 50%, rgba(101, 218, 69, .55) 100%);
-  cursor: pointer;
 }
 
+/* Input field styles */
 input {
   border: 2px solid #f0f0f0;
   border-radius: 10px;
@@ -133,6 +145,7 @@ input {
   margin-left: 10px;
 }
 
+/* Hero section styles */
 .hero {
   display: flex;
   flex-direction: column;
@@ -141,7 +154,6 @@ input {
   padding-top: 150px;
   gap: 100px;
   text-align: center;
-  /* background-image: url("/d424test/hero.png"); */
   background-image: url("/hero.png");
   background-size: 500px;
   background-repeat: no-repeat;
@@ -151,10 +163,8 @@ input {
 
 .hero h1 {
   font-size: 5rem;
-  text-wrap: none;
   line-height: 1;
   font-family: "Playwrite PL", cursive;
-  font-optical-sizing: auto;
   font-weight: normal;
   font-style: italic;
 }
@@ -163,6 +173,7 @@ input {
   color: #8f8d8d;
 }
 
+/* Hero copy section */
 .hero-copy {
   display: flex;
   flex-direction: column;
@@ -171,6 +182,7 @@ input {
   gap: 70px;
 }
 
+/* Search form styles */
 .search-form {
   display: flex;
   align-items: center;
@@ -188,15 +200,15 @@ input {
   border: none;
   width: 100%;
   padding: 5px 10px;
-
 }
 
-/* RECIPE */
+/* Recipe card styles for active state */
 .recipe-card.active {
   width: 60%;
   margin-top: 50px;
 }
 
+/* Recipe section styles */
 .recipe {
   display: flex;
   align-items: center;
@@ -216,26 +228,25 @@ input {
   margin-right: 20px;
 }
 
-/* RECIPE CARD LIST */
+/* Recipe card list styles */
 .recipe-title {
   font-size: 30px;
   padding: 70px 40px 20px;
   text-align: center;
 }
+
 .recipe-card {
   width: 50%;
   border-radius: 10px;
   padding: 30px 20px;
   margin: 0 auto 50px;
-  /*box-shadow: rgba(229, 7, 210, 0.35) 0 5px 15px;*/
-  /*border: 2px solid #cecece;*/
-  /*background: #FFF;*/
 }
 
 .recipe-card button:not(:first-child) {
   margin-left: 10px;
 }
 
+/* Recipes list styles */
 .recipes {
   display: flex;
   align-items: center;
@@ -260,22 +271,26 @@ input {
   font-size: 25px;
   margin-bottom: 10px;
 }
+
 .recipes p,
 .recipes div {
   font-size: 18px;
   font-weight: bold;
   text-transform: capitalize;
 }
+
 .recipes ul {
   display: flex;
   flex-direction: column;
   padding: 5px 20px 10px;
 }
+
 .recipes span {
   font-weight: normal;
   letter-spacing: normal;
 }
 
+/* Recipe search suggestions */
 .recipes-search {
   position: absolute;
   top: 120%;
@@ -285,19 +300,17 @@ input {
   width: 90%;
   background: white;
 }
-.recipes-search p {
 
+.recipes-search p {
   width: 100%;
   text-align: left;
   padding: 10px;
 }
-.recipes-search p:hover {
-  background-color: #f6f6f6;
-  cursor: pointer;
-}
+
 .recipes-search p:nth-child(even) {
   background-color: #f3f3f3;
 }
+
 .recipes-search p:hover {
   background-color: rgba(144, 94, 185, 0.7);
   border: 1px solid #cecece;
@@ -305,19 +318,21 @@ input {
   color: #fff;
 }
 
-/* ADD RECIPE */
+/* Add recipe title */
 .add-recipe-title {
   font-size: 30px;
   padding: 40px 40px 0;
   text-align: center;
 }
 
+/* Add recipe form styles */
 .add-recipe-form {
   display: grid;
   grid-template-columns: auto auto auto;
   gap: 32px;
   padding: 40px 40px 0;
 }
+
 .add-recipe-form label {
   display: flex;
   flex-direction: column;
@@ -326,12 +341,14 @@ input {
   gap: 16px;
   margin-top: 50px;
 }
+
 .add-recipe-form input {
   width: 300px;
   padding: 10px;
   border-radius: 12px;
 }
 
+/* Banner message styles */
 .banner-message {
   width: 300px;
   padding: 15px 0;
@@ -345,10 +362,12 @@ input {
 .banner-message.success {
   color: #0cb004;
 }
+
 .banner-message.danger {
   color: red;
 }
 
+/* Form container styles */
 .form-container {
   max-width: 5px;
   margin: auto;
