@@ -11,7 +11,7 @@ import AddRecipeForm from "./add-recipe-form";
 import RecipeCard from "./recipe-card";
 
 const colRef = collection(db.db, "recipes");
-
+// test
 async function fetchDataFromFirestore() {
   try {
     const querySnapshot = await getDocs(colRef);
